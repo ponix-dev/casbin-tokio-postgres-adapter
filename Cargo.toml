@@ -9,13 +9,13 @@ homepage= "https://github.com/casbin-rs/postgres-adapter"
 readme= "README.md"
 
 [dependencies]
-casbin = { version = "2.0.9", default-features = false }
-async-trait = "0.1.56"
+casbin = { version = "2.17", default-features = false }
+async-trait = "0.1"
 dotenv = { version = "0.15.0", default-features = false }
-tokio = { version = "1.19.2", default-features = false, optional = true }
-tokio-postgres = { version = "0.7.6", default-features = false }
-deadpool-postgres = { version = "0.10.2", default-features = false }
-deadpool = { version = "0.9.5", default-features = false }
+tokio = { version = "1.40", default-features = false, optional = true }
+tokio-postgres = { version = "0.7", default-features = false }
+deadpool-postgres = { version = "0.14", default-features = false }
+deadpool = { version = "0.12", default-features = false }
 futures = "0.3"
 
 [features]
@@ -23,7 +23,7 @@ default = ["runtime-tokio"]
 runtime-tokio = ["casbin/runtime-tokio", "deadpool/rt_tokio_1"]
 
 [dev-dependencies]
-tokio = { version = "1.19.2", features = [ "full" ] }
+tokio = { version = "1.40", features = ["full"] }
 
 [profile.release]
 codegen-units = 1
